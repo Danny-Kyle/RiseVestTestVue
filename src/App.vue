@@ -5,8 +5,8 @@ import Sponsors from "@/components/Sponsors.vue"
 </script>
 
 <template>
-  <main class="all">
-  <div class="app">
+  <div class="layout">
+  <header class="header">
     <div class="navbar">
       <div class="logo"><img src="@/assets/riseNav.svg" alt="Navlogo"></div>
       <div class="nav-links">
@@ -19,16 +19,23 @@ import Sponsors from "@/components/Sponsors.vue"
           <p><a href="#faqs">FAQs</a></p>
         </ul>
       </div>
+      <img src="@/assets/menubars.svg" alt="Menubars" class="menubars">
     </div>
-  </div>
+  </header>
 
-  <section>
+  <main class="main">
+    <section>
+      <div class="Ellipse">
+        <img src="@/assets/bigEllipse.svg" alt="Big Ellipse">
+      </div>
     <SectionOne />
     <Sponsors/>
   </section>
 
   <img src="@/assets/section.svg" alt="section" class="section-lg">
   <img src="@/assets/sectionSM.svg" alt="section" class="section-sm">
+  </main>
+  
 
   <footer class="footer">
     <div class="footer-content">
@@ -70,16 +77,25 @@ import Sponsors from "@/components/Sponsors.vue"
       </div>
     </div>
   </footer>
-</main>
+
+</div>
 </template>
 
 <style scoped>
-.app {
-  min-width: 100%;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.navbar {
+.menubars {
   display: block;
+}
+
+.Ellipse {
+  display: flex;
+  justify-content:right;
 }
 
 .navbar .nav-links {
@@ -143,23 +159,26 @@ import Sponsors from "@/components/Sponsors.vue"
   margin-bottom: 0.5rem;
 }
 
-
 @media (min-width: 1280px) {
-  .all {
-    min-width: 100%;
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width:max-content;
   }
 
-  .app {
+  .header {
     min-width: auto;
+  }
+
+  .menubars {
+    display: none;
   }
 
   .navbar {
     margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction: row;
-    align-items: center;
     padding: 10px;
   }
 
